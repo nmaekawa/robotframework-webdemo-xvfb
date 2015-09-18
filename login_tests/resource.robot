@@ -8,14 +8,16 @@ Library           Selenium2Library
 Library           XvfbRobot
 
 *** Variables ***
-${SERVER}         localhost:7272
+${SERVER}         dev-05-engage-001.dce.harvard.edu
 ${BROWSER}        Firefox
 ${DELAY}          0
-${VALID USER}     demo
-${VALID PASSWORD}    mode
-${LOGIN URL}      http://${SERVER}/
+${VALID USER}     admin
+${VALID PASSWORD}    opencast
+${LOGIN URL}      http://${SERVER}/j_spring_security_check
+${LOGIN TITLE}    Opencast Matterhorn – Login Page
 ${WELCOME URL}    http://${SERVER}/welcome.html
-${ERROR URL}      http://${SERVER}/error.html
+${WELCOME TITLE}    Opencast Matterhorn - 1.5.1: Zmutt Ridge
+${ERROR URL}      http://${SERVER}/login.html?error
 
 *** Keywords ***
 Open Browser To Login Page
@@ -26,7 +28,7 @@ Open Browser To Login Page
     Login Page Should Be Open
 
 Login Page Should Be Open
-    Title Should Be    Login Page
+    Title Should Be    ${LOGIN TITLE}
 
 Go To Login Page
     Go To    ${LOGIN URL}
@@ -34,15 +36,17 @@ Go To Login Page
 
 Input Username
     [Arguments]    ${username}
-    Input Text    username_field    ${username}
+    Input Text    j_username    ${username}
 
 Input Password
     [Arguments]    ${password}
-    Input Text    password_field    ${password}
+    Input Text    j_password    ${password}
 
 Submit Credentials
-    Click Button    login_button
+    Click Button    submit
 
 Welcome Page Should Be Open
     Location Should Be    ${WELCOME URL}
-    Title Should Be    Welcome Page
+    Title Should Be       ${WELCOME TITLE}
+
+

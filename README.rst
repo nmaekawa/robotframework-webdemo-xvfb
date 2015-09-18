@@ -1,3 +1,9 @@
+- fork from git@bitbucket.org:robotframework/webdemo.git
+- adapted to run headless browses via xvfb and robotframework-xvfb module
+- adapted to test login in a dce matterhorn installation
+
+
+
 Web testing with Robot Framework and Selenium2Library
 =====================================================
 
