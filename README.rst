@@ -1,3 +1,8 @@
+- fork from git@bitbucket.org:robotframework/webdemo.git
+- adapted to run headless browses via xvfb
+
+
+
 Web testing with Robot Framework and Selenium2Library
 =====================================================
 
