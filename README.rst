@@ -3,7 +3,6 @@
 - adapted to test login in a dce matterhorn installation
 
 
-
 Web testing with Robot Framework and Selenium2Library
 =====================================================
 
